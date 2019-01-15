@@ -1,3 +1,4 @@
-./build/
-./dist/
+.gitignore~
+build/
+dist/
 *.so

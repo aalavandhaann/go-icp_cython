@@ -44,7 +44,7 @@ setup(cmdclass={'build_ext':build_ext},
       license='LICENSE.txt',
       keywords='icp go-icp registration alignment rigid-align rigid-alignment',
       python_requires='>=2',
-      long_description=open('README.rst').read(),
+      long_description=open('README.md').read(),
       zip_safe=False,
      )
 

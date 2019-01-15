@@ -1,0 +1,1 @@
+v<0.0.1>, <05/01/2018> -- Initial release. This version supports Linux (Tested), Windows(not Tested) , and Macintosh (not tested)

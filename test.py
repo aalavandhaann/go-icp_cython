@@ -34,8 +34,8 @@ if(goicp.trimFraction < 0.001):
 a_points = [POINT3D(0.0, 0.0, 0.0), POINT3D(0.5, 1.0, 0.0), POINT3D(1.0, 0.0, 0.0)];
 b_points = [POINT3D(0.0, 0.0, 0.0), POINT3D(1.0, 0.5, 0.0), POINT3D(1.0, -0.5, 0.0)];
 
-Nm, a_points = loadPointCloud('./test_data/model_bunny.txt');
-Nd, b_points = loadPointCloud('./test_data/data_bunny.txt');
+Nm, a_points = loadPointCloud('./tests/model_bunny.txt');
+Nd, b_points = loadPointCloud('./tests/data_bunny.txt');
 
 goicp.loadModelAndData(Nm, a_points, Nd, b_points);
 #LESS DT Size = LESS TIME CONSUMPTION = HIGHER ERROR
@@ -50,7 +50,19 @@ print("REGISTERING....");
 goicp.Register();
 end = time.time();
 print('TOTAL TIME : ', (end-start));
-print(goicp.optimalRotation());
-print(goicp.optimalTranslation());
-'''
-'''
+optR = np.array(goicp.optimalRotation());
+optT = goicp.optimalTranslation();
+optT.append(1.0);
+optT = np.array(optT);
+
+transform = np.empty((4,4));
+transform[:3, :3] = optR;
+transform[:,3] = optT;
+
+print(optR);
+print(optT);
+print(transform);
+
+
+
+

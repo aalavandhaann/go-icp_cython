@@ -4,8 +4,10 @@ from Cython.Distutils import build_ext
 
 import autowrap;
 
-VERSION = (0, 0, 1);
+VERSION = (0, 0, 2);
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
 include_dir = os.path.join(data_dir, "autowrap")
@@ -44,7 +46,8 @@ setup(cmdclass={'build_ext':build_ext},
       license='LICENSE.txt',
       keywords='icp go-icp registration alignment rigid-align rigid-alignment',
       python_requires='>=2',
-      long_description=open('README.md').read(),
+      long_description=long_description,
+      long_description_content_type="text/markdown",
       zip_safe=False,
      )
 

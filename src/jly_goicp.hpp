@@ -37,9 +37,9 @@ using namespace std;
 
 struct POINT3D
 {
-	double x, y, z;
+	float x = 0.0, y = 0.0, z = 0.0;
 	POINT3D(){}
-	POINT3D(double xx, double yy, double zz){
+	POINT3D(float xx, float yy, float zz){
 				x = xx;
 				y = yy;
 				z = zz;
@@ -52,9 +52,9 @@ struct POINT3D
 
 struct ROTNODE
 {
-	float a, b, c, w;
-	float ub, lb;
-	int l;
+	float a = 0.0, b = 0.0, c = 0.0, w = 0.0;
+	float ub = 0.0, lb = 0.0;
+	int l = 0;
 	ROTNODE(){}
 	friend bool operator < (const struct ROTNODE & n1, const struct ROTNODE & n2)
 	{
@@ -69,8 +69,8 @@ struct ROTNODE
 
 struct TRANSNODE
 {
-	float x, y, z, w;
-	float ub, lb;
+	float x = 0.0, y = 0.0, z = 0.0, w = 0.0;
+	float ub = 0.0, lb = 0.0;
 	TRANSNODE(){}
 	friend bool operator < (const struct TRANSNODE & n1, const struct TRANSNODE & n2)
 	{
@@ -409,6 +409,10 @@ void GoICP::Clear()
 	delete(maxRotDis);
 	delete(M_icp);
 	delete(D_icp);
+
+	//To handle the segmentation faults delete pModel and pData as well by #0K
+//	delete(pModel);
+//	delete(pData);
 }
 
 // Inner Branch-and-Bound, iterating over the translation space

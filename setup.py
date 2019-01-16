@@ -24,8 +24,10 @@ include_dir = os.path.join(data_dir, "autowrap")
 ext = Extension("py_goicp",
                 sources = ['src/py_goicp.cpp'],
                 language="c++",
-                extra_compile_args=["-std=c++14"],
-                extra_link_args=["-std=c++14"],
+                extra_compile_args=["-std=c++14"], #Release mode (no -g switch)
+                extra_link_args=["-std=c++14"], #Release mode (no -g switch)
+#                 extra_compile_args=["-std=c++14", "-g"], #Debug mode (no -g switch)
+#                 extra_link_args=["-std=c++14",  "-g"], #Debug mode (no -g switch)
                 include_dirs = [include_dir, data_dir],
                )
 

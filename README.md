@@ -22,13 +22,21 @@ Please read this file carefully prior to using the code. Some frequently-asked q
 ### Compiling
 
 The cython module uses Autowrap to created the pyx and cpp files. Also changes involve removal of .cpp files and having only .hpp files. Although you don't have to do anything but run on the head folder the below command,
+
 ``` python setup.py build_ext --inplace ```
 
 If you wish to generate the pyx files after modifying the source code in c++ (Adventure is waiting), then run the below command from the terminal inside the 'src' folder
-```
-autowrap --out py_goicp.pyx goicpcc.pxd
-```
 
+``` autowrap --out py_goicp.pyx goicpcc.pxd ```
+
+#### You need CYTHON installed on your python or virtualenv, or conda environment (whichever you use) to compile and use this library
+
+### INSTALLATION
+
+The package if you have compiled it manually then it can be installed using the command
+``` python setup.py install ```
+Otherwise this is available on the pip package as well. The current version is 0.0.3 and can be installed with 
+``` pip install py-goicp ``` (you need administrator, else use ``` --user ``` flag
 
 ### Running
 
@@ -42,7 +50,6 @@ Use the test.py lying in parallel to the setup.py file. This should teach you on
 A simple usage will be (after setting the parameters)
 
 ```
-
 import numpy as np;
 from py_goicp import GoICP, POINT3D, ROTNODE, TRANSNODE;
 def loadPointCloud(filename):

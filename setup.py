@@ -4,10 +4,12 @@ from Cython.Distutils import build_ext
 
 import autowrap;
 
-VERSION = (0, 0, 2);
+VERSION = (0, 0, 3);
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+# with open("README.md", "r") as fh:
+#     long_description = fh.read()
+
+long_description ="Go-ICP for globally optimal 3D pointset registration.";
 
 data_dir = pkg_resources.resource_filename("autowrap", "data_files")
 include_dir = os.path.join(data_dir, "autowrap")
@@ -40,7 +42,7 @@ setup(cmdclass={'build_ext':build_ext},
       ],
       author='#0K Srinivasan Ramachandran',
       author_email='ashok.srinivasan2002@gmail.com',
-      url='https://github.com/aalavandhaann/goicp_cython',
+      url='https://github.com/aalavandhaann/go-icp_cython',
       maintainer="#0K Srinivasan Ramachandran",
       maintainer_email="ashok.srinivasan2002@gmail.com",
       platforms=["any"],
@@ -48,9 +50,7 @@ setup(cmdclass={'build_ext':build_ext},
       license='LICENSE.txt',
       keywords='icp go-icp registration alignment rigid-align rigid-alignment',
       python_requires='>=2',
-      long_description=long_description,
-      long_description_content_type="text/markdown",
-      zip_safe=False,
+      long_description=long_description
      )
 
 ###AUTOWRAP

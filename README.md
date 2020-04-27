@@ -12,8 +12,7 @@ This is a cython version of the original go-icp project by [yangjiaolong](https:
 
 This repository contains the Cythonized code for the Go-ICP algorithm (with trimming strategy for outlier handling). It is free software under the terms of the GNU General Public License (GPL) v3. Details of the Go-ICP algorithm can be found in the papers:
 
-* J. Yang, H. Li, Y. Jia, *Go-ICP: Solving 3D Registration Efficiently and
-Globally Optimally*, International Conference on Computer Vision (__ICCV__), 2013. [PDF](http://jlyang.org/iccv13_go-icp.pdf)
+* J. Yang, H. Li, Y. Jia, *Go-ICP: Solving 3D Registration Efficiently and Globally Optimally*, International Conference on Computer Vision (__ICCV__), 2013. [PDF](http://jlyang.org/iccv13_go-icp.pdf)
 
 * J. Yang, H. Li, D. Campbell, Y. Jia, *Go-ICP: A Globally Optimal Solution to 3D ICP Point-Set Registration*, IEEE Transactions on Pattern Analysis and Machine Intelligence (__TPAMI__), 2016. [PDF](http://jlyang.org/tpami16_go-icp_preprint.pdf)
 
@@ -49,7 +48,7 @@ Use the test.py lying in parallel to the setup.py file. This should teach you on
 
 A simple usage will be (after setting the parameters)
 
-```
+```python
 import numpy as np;
 from py_goicp import GoICP, POINT3D, ROTNODE, TRANSNODE;
 def loadPointCloud(filename):

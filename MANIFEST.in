@@ -1,5 +1,6 @@
 include *.txt 
 include *.md 
 include test.py
-recursive-include src *.h *.cpp *.hpp *.pyx *.pxd
+recursive-include src *.h *.hpp *.pxd
+recursive-exclude src py_*.*
 recursive-include tests *.py

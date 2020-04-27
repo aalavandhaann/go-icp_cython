@@ -1,5 +1,6 @@
 import os, platform, pkg_resources
-from distutils.core import setup, Extension
+# from distutils.core import setup, Extension
+from setuptools import setup, Extension;
 from Cython.Distutils import build_ext
 
 NO_AUTOWRAP=False;
@@ -8,7 +9,7 @@ try:
 except ImportError:
     NO_AUTOWRAP=True;
 
-VERSION = (0, 0, 3);
+VERSION = (0, 0, 4);
 
 # with open("README.md", "r") as fh:
 #     long_description = fh.read()
@@ -50,9 +51,7 @@ setup(cmdclass={'build_ext':build_ext},
       name="py_goicp",
       version="%d.%d.%d" % VERSION,
       ext_modules = [ext],
-      install_requires=[
-          'autowrap',
-      ],
+      install_requires=['autowrap>=0.22'],
       author='#0K Srinivasan Ramachandran',
       author_email='ashok.srinivasan2002@gmail.com',
       url='https://github.com/aalavandhaann/go-icp_cython',
@@ -63,7 +62,9 @@ setup(cmdclass={'build_ext':build_ext},
       license='LICENSE.txt',
       keywords='icp go-icp registration alignment rigid-align rigid-alignment',
       python_requires='>=2',
-      long_description=long_description
+      long_description_content_type='text/markdown',
+      long_description=open('README.md').read(),
+      zip_safe=False,
      )
 
 ###AUTOWRAP

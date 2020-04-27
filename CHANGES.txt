@@ -1,3 +1,4 @@
 v<0.0.1>, <05/01/2018> -- Initial release. This version supports Linux (Tested), Windows(not Tested) , and Macintosh (not tested)
 v<0.0.2>, <05/01/2018> -- This version supports Linux (Tested), Windows(not Tested) , and Macintosh (not tested)
 v<0.0.3>, <16/01/2019> -- Fixing the Segmentation fault because of un-initialized values of an integer variable in the structure ROTNODE, TRANSNODE
+v<0.0.4>, <27/04/2020> -- Enable compilation of pyx and cpp files during installation. 

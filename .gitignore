@@ -4,3 +4,5 @@ dist/
 __pycache__/
 *.so
 MANIFEST
+py_goicp.pyx
+py_goicp.cpp

@@ -63,7 +63,7 @@ setup(cmdclass={'build_ext':build_ext},
       keywords='icp go-icp registration alignment rigid-align rigid-alignment',
       python_requires='>=2',
       long_description_content_type='text/markdown',
-      long_description=open('README.md').read(),
+      long_description=open('README.md', encoding='utf-8').read(),
       zip_safe=False,
      )
 
